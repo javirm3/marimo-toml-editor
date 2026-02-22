@@ -2,7 +2,8 @@
 
 > An interactive TOML config editor widget for **Jupyter** and **marimo** notebooks — built with [anywidget](https://anywidget.dev).
 
-![demo](docs/demo.png)
+![](https://github.com/javirm3/marimo-toml-editor/raw/main/docs/demo.png)
+
 
 ## Features
 

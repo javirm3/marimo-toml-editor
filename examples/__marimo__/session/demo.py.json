@@ -50,7 +50,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='bkHC-0' random-id='bb4ab082-2cec-fbb5-be89-b6797ce7f543'><marimo-anywidget data-initial-value='{&quot;model_id&quot;:&quot;96705e4251554b689d7a322bd3e65d0a&quot;}' data-label='null' data-js-url='&quot;./@file/39078-2594138-UFiKyG5Y.js&quot;' data-js-hash='&quot;7798eab70a4d201909e8458307516180&quot;'></marimo-anywidget></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='bkHC-0' random-id='b4b0350c-6589-142f-a4b7-17c53a45ccaa'><marimo-anywidget data-initial-value='{&quot;model_id&quot;:&quot;9a03abce9b4b4f69a268c70c1a9aad56&quot;}' data-label='null' data-js-url='&quot;./@file/39453-3616663-s4bdBSuF.js&quot;' data-js-hash='&quot;defaec725198403fcebac0d3d03dbd76&quot;'></marimo-anywidget></marimo-ui-element>"
           }
         }
       ],
@@ -64,6 +64,32 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"current-state\">Current state</h3>\n<ul>\n<li><strong>Title:</strong> <code>My Application</code></li>\n<li><strong>Debug:</strong> <code>False</code></li>\n<li><strong>Tags:</strong> <code>['web', 'api', 'production']</code></li>\n<li><strong>Server port:</strong> <code>8080</code></li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
           }
         }
       ],

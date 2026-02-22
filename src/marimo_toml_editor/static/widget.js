@@ -848,26 +848,27 @@ export default {
             if (!tabNames.includes(activeTab)) activeTab = "root";
 
             // Rebuild tabs — capture searchBox focus state before clearing
-            const searchHadFocus = document.activeElement === searchBox;
+            // In Shadow DOM, document.activeElement points to the host, so we use matches(':focus')
+            const searchHadFocus = searchBox.matches(':focus');
             const searchCursorPos = searchHadFocus ? searchBox.selectionStart : null;
 
-            tabs.innerHTML = "";
+            // Ensure searchBox is inside tabs before we insertBefore it
+            if (searchBox.parentNode !== tabs) {
+                tabs.appendChild(searchBox);
+            }
+
+            // Clear existing tab buttons but keep the searchBox
+            while (tabs.firstChild && tabs.firstChild !== searchBox) {
+                tabs.removeChild(tabs.firstChild);
+            }
+
             for (const t of tabNames) {
                 const b = document.createElement("button");
                 b.className = "tab" + (t === activeTab ? " active" : "");
                 b.textContent = t === "raw" ? "{ } Raw" : t;
                 b.type = "button";
                 b.onclick = () => { activeTab = t; renderAll(); };
-                tabs.appendChild(b);
-            }
-            tabs.appendChild(searchBox); // re-append the persistent search box
-
-            // Restore search focus and cursor position
-            if (searchHadFocus) {
-                searchBox.focus();
-                if (searchCursorPos !== null) {
-                    searchBox.setSelectionRange(searchCursorPos, searchCursorPos);
-                }
+                tabs.insertBefore(b, searchBox);
             }
 
             // Panel
@@ -884,6 +885,14 @@ export default {
                 title.className = "sectionTitle"; title.textContent = `[${activeTab}]`;
                 panel.appendChild(title);
                 panel.appendChild(renderObjectCard(tables[activeTab] || {}, activeTab, activeTab));
+            }
+
+            // Restore search focus and cursor position
+            if (searchHadFocus) {
+                searchBox.focus();
+                if (searchCursorPos !== null) {
+                    searchBox.setSelectionRange(searchCursorPos, searchCursorPos);
+                }
             }
         }
 

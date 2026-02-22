@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "marimo-toml-editor"
-version = "0.1.0"
+version = "0.1.1"
 description = "Interactive TOML config editor widget for Jupyter and marimo notebooks"
 readme = "README.md"
 license = { text = "MIT" }
